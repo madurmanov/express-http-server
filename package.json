@@ -1,0 +1,34 @@
+{
+  "name": "express-http-server",
+  "version": "1.0.0",
+  "description": "express-http-server",
+  "main": "index.js",
+  "scripts": {
+    "server": "cross-env NODE_PATH=. node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/madurmanov/express-http-server.git"
+  },
+  "keywords": [
+    "express-http-server"
+  ],
+  "author": "Mikhail Durmanov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/madurmanov/express-http-server/issues"
+  },
+  "homepage": "https://github.com/madurmanov/express-http-server#readme",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "ejs-locals": "^1.0.2",
+    "express": "^4.14.1",
+    "morgan": "^1.8.1",
+    "nconf": "^0.8.4",
+    "winston": "^2.3.1",
+    "ws": "^2.2.2"
+  },
+  "devDependencies": {
+    "cross-env": "^3.2.4"
+  }
+}
