@@ -22,22 +22,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', router);
 
-router.get('/', function(req, res, next) {
-  res.render('index');
+router.get('/', function(request, response, next) {
+  response.render('index');
 });
 
-app.use(function(req, res, next) {
-  var err = new Error('Page not found');
-  err.status = 404;
-  log.error(req.url, ' not found');
-  next(err);
+app.use(function(request, response, next) {
+  var error = new Error('Page not found');
+  error.status = 404;
+  log.error(request.url, ' not found');
+  next(error);
 });
 
-app.use(function(err, req, res, next) {
-  res.locals.message = err.message;
-  res.locals.error = err;
-  res.status(err.status || 500);
-  res.render('error');
+app.use(function(error, request, response, next) {
+  response.locals.message = error.message;
+  response.locals.error = error;
+  response.status(error.status || 500);
+  response.render('error');
 });
 
 if (!fs.existsSync(path.join(__dirname, 'node_modules'))) {
